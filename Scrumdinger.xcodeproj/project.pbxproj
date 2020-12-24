@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421C979D25952EA100A45C2D /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C979C25952EA100A45C2D /* EditView.swift */; };
 		42290F7725934BBE00DF5E94 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42290F7625934BBE00DF5E94 /* ScrumdingerApp.swift */; };
 		42290F7925934BBE00DF5E94 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42290F7825934BBE00DF5E94 /* MeetingView.swift */; };
 		42290F7B25934BC100DF5E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42290F7A25934BC100DF5E94 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421C979C25952EA100A45C2D /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditView.swift; path = Models/EditView.swift; sourceTree = "<group>"; };
 		42290F7325934BBE00DF5E94 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42290F7625934BBE00DF5E94 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		42290F7825934BBE00DF5E94 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		42290F7525934BBE00DF5E94 /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				421C979C25952EA100A45C2D /* EditView.swift */,
 				42290F7625934BBE00DF5E94 /* ScrumdingerApp.swift */,
 				42290F7825934BBE00DF5E94 /* MeetingView.swift */,
 				42290F87259352EC00DF5E94 /* Models */,
@@ -163,6 +166,7 @@
 			files = (
 				42290F7925934BBE00DF5E94 /* MeetingView.swift in Sources */,
 				4267396F25948D22008741E0 /* ScrumsView.swift in Sources */,
+				421C979D25952EA100A45C2D /* EditView.swift in Sources */,
 				42290F89259352F800DF5E94 /* DailyScrum.swift in Sources */,
 				4267397225949588008741E0 /* DetailView.swift in Sources */,
 				42290F8D2593542D00DF5E94 /* CardView.swift in Sources */,
