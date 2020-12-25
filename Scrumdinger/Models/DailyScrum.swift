@@ -15,6 +15,7 @@ struct DailyScrum: Identifiable {
     var lengthInMinutes: Int
     var color: Color
 
+    // TODO Can this code be removed? I don't see a reason for having this; The UUID optional thing can be defined on the variable
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, color: Color) {
         self.id = id
         self.title = title
