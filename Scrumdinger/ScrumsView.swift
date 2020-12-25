@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
+    @State private var isPresented = false
+    @State private var newScrumData = DailyScrum.Data()
     var body: some View {
         List {
             ForEach(scrums) { scrum in
@@ -21,18 +23,40 @@ struct ScrumsView: View {
         .navigationTitle("Daily Scrums")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: { }) {
+                Button(action: {
+                    newScrumData = DailyScrum.Data() // Ataias update
+                    isPresented = true
+                }) {
                     Image(systemName: "plus")
                 }
             }
         }
+        .sheet(isPresented: $isPresented) {
+            NavigationView {
+                EditView(scrumData: $newScrumData)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button("Cancel") {
+                                isPresented = false
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button("Done") {
+                                let newScrum = DailyScrum(title: newScrumData.title, attendees: newScrumData.attendees, lengthInMinutes: Int(newScrumData.lengthInMinutes), color: newScrumData.color)
+                                scrums.append(newScrum)
+                                isPresented = false
+                            }
+                        }
+                    }
+            }
+        }
     }
-
+    
     private func binding(for scrum: DailyScrum) -> Binding<DailyScrum> {
         guard let scrumIndex = scrums.firstIndex(where: { $0.id == scrum.id }) else {
             fatalError("Can't find scrum in array")
         }
-
+        
         return $scrums[scrumIndex]
     }
 }
