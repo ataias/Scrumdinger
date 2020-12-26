@@ -7,6 +7,34 @@
 
 import SwiftUI
 
+// MARK: - Shapes
+struct SpeakerArc: Shape {
+    let speakerIndex: Int
+    let totalSpeakers: Int
+    private var degreesPerSpeaker: Double {
+        360.0 / Double(totalSpeakers)
+    }
+    private var startAngle: Angle {
+        // The additional 1.0 degree is for visual separation between arc segments.
+        Angle(degrees: degreesPerSpeaker * Double(speakerIndex) + 1.0)
+    }
+    private var endAngle: Angle {
+        // The subtracted 1.0 degree is for visual separation between arc segments.
+        Angle(degrees: startAngle.degrees + degreesPerSpeaker - 1.0)
+    }
+
+    func path(in rect: CGRect) -> Path {
+        let diameter = min(rect.width, rect.height) - 24.0
+        let radius = diameter / 2.0
+        let center = CGPoint(x: rect.origin.x + rect.width / 2.0,
+                             y: rect.origin.y + rect.height / 2.0)
+        return Path { path in
+            path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        }
+    }
+}
+
+// MARK: - Main View
 struct MeetingTimerView: View {
     @Binding var speakers: [ScrumTimer.Speaker]
     var scrumColor: Color
@@ -22,6 +50,14 @@ struct MeetingTimerView: View {
             }
             .accessibilityElement(children: .combine)
             .foregroundColor(scrumColor.accessibleFontColor)
+            ForEach(speakers) { speaker in
+                if speaker.isCompleted,
+                   let index = speakers.firstIndex(where: { $0.id == speaker.id }) {
+                    SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
+                        .rotation(Angle(degrees: -90.0))
+                        .stroke(scrumColor, lineWidth: 12)
+                }
+            }
         }
         .padding([.horizontal])
     }
