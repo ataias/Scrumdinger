@@ -37,6 +37,7 @@ struct SpeakerArc: Shape {
 // MARK: - Main View
 struct MeetingTimerView: View {
     @Binding var speakers: [ScrumTimer.Speaker]
+    @Binding var isRecording: Bool
     var scrumColor: Color
     private var currentSpeaker: String { speakers.first(where: { !$0.isCompleted })?.name ?? "Someone" }
     var body: some View {
@@ -47,9 +48,15 @@ struct MeetingTimerView: View {
                 Text(currentSpeaker)
                     .font(.title)
                 Text("is speaking")
+                Image(systemName: isRecording ? "mic" : "mic.slash")
+                    .font(.title)
+                    .padding(.top)
+                    .accessibilityLabel(isRecording ? "with transcription" : "without transcription")
             }
             .accessibilityElement(children: .combine)
             .foregroundColor(scrumColor.accessibleFontColor)
+
+
             ForEach(speakers) { speaker in
                 if speaker.isCompleted,
                    let index = speakers.firstIndex(where: { $0.id == speaker.id }) {
@@ -66,6 +73,6 @@ struct MeetingTimerView: View {
 struct MeetingTimerView_Previews: PreviewProvider {
     @State static var speakers = [ScrumTimer.Speaker(name: "Kim", isCompleted: true), ScrumTimer.Speaker(name: "Bill", isCompleted: false)]
     static var previews: some View {
-        MeetingTimerView(speakers: $speakers, scrumColor: Color("Design"))
+        MeetingTimerView(speakers: $speakers, isRecording: .constant(true), scrumColor: Color("Design"))
     }
 }
