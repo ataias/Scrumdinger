@@ -33,3 +33,7 @@ struct ScrumdingerApp: App {
         }
     }
 }
+
+//@UIApplicationMain
+//class AppDelegate: UIResponder, UIApplicationDelegate {
+//    }

@@ -18,7 +18,7 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>start</string>
+			<string>generic</string>
 			<key>INIntentConfigurable</key>
 			<true/>
 			<key>INIntentDescriptionID</key>
@@ -87,7 +87,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>What is the scrum?</string>
+							<string>What is the scrum name?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>HjJ25e</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -134,20 +134,20 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
 						<string>Name</string>
 						<key>INIntentResponseParameterDisplayNameID</key>
-						<string>g3GrbX</string>
+						<string>Cnawux</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>name</string>
 						<key>INIntentResponseParameterTag</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
@@ -160,7 +160,7 @@
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentVerb</key>
-			<string>Start</string>
+			<string>Run</string>
 		</dict>
 	</array>
 	<key>INTypes</key>
