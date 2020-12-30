@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 
 @main
 struct ScrumdingerApp: App {
@@ -20,6 +21,14 @@ struct ScrumdingerApp: App {
             }
             .onAppear {
                 data.load()
+                INPreferences.requestSiriAuthorization({ status in
+                    switch status {
+                    case .authorized:
+                        print("Great! Authorized Siri Access")
+                    default:
+                        print("Siri access denied!")
+                    }
+                })
             }
         }
     }

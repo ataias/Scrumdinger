@@ -18,8 +18,22 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>INIntentsSupported</key>
+	<array>
+		<string>ScrumIntent</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>We allow you to talk to Siri to start scrums.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>You can view a text transcription of your meeting in the app.</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ScrumIntent</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -46,9 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>You can view a text transcription of your meeting in the app.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.</string>
 </dict>
 </plist>

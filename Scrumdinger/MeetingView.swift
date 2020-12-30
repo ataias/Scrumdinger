@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 import AVFoundation
 
 struct MeetingView: View {
@@ -37,6 +38,11 @@ struct MeetingView: View {
             scrumTimer.startScrum()
             speechRecognizer.record(to: $transcript)
             isRecording = true
+
+            let intent = ScrumIntent()
+            intent.name = scrum.title
+            let interaction = INInteraction(intent: intent, response: nil)
+            interaction.donate(completion: nil)
         }
         .onDisappear {
             scrumTimer.stopScrum()

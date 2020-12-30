@@ -24,12 +24,42 @@
 		42386B6C2595F89C00639FBD /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42386B6B2595F89C00639FBD /* History.swift */; };
 		4267396F25948D22008741E0 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267396E25948D22008741E0 /* ScrumsView.swift */; };
 		4267397225949588008741E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267397125949588008741E0 /* DetailView.swift */; };
+		429C7428259CC43C00978013 /* ScrumIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429C7427259CC43C00978013 /* ScrumIntentHandler.swift */; };
 		42A9EA36259CA51000FC8BA9 /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */; };
+		42A9EA3F259CB76600FC8BA9 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A9EA3E259CB76600FC8BA9 /* Intents.framework */; };
+		42A9EA42259CB76600FC8BA9 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA41259CB76600FC8BA9 /* IntentHandler.swift */; };
+		42A9EA46259CB76600FC8BA9 /* ScrumIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42A9EA3C259CB76600FC8BA9 /* ScrumIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42A9EA4E259CB84200FC8BA9 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA4D259CB84200FC8BA9 /* Intents.intentdefinition */; };
+		42A9EA4F259CB84200FC8BA9 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA4D259CB84200FC8BA9 /* Intents.intentdefinition */; };
 		42C7B3C525975CA600EEE64E /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3C425975CA600EEE64E /* ScrumData.swift */; };
 		42C7B3C925976D0000EEE64E /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3C825976D0000EEE64E /* MeetingTimerView.swift */; };
 		42C7B3CD259775FD00EEE64E /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3CC259775FD00EEE64E /* SpeechRecognizer.swift */; };
 		42C7B3D125977E5400EEE64E /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3D025977E5400EEE64E /* HistoryView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A9EA44259CB76600FC8BA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42290F6B25934BBD00DF5E94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42A9EA3B259CB76600FC8BA9;
+			remoteInfo = ScrumIntents;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42A9EA4A259CB76600FC8BA9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42A9EA46259CB76600FC8BA9 /* ScrumIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		421C979C25952EA100A45C2D /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditView.swift; path = Models/EditView.swift; sourceTree = "<group>"; };
@@ -51,7 +81,15 @@
 		42386B6B2595F89C00639FBD /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = History.swift; path = Scrumdinger/History.swift; sourceTree = SOURCE_ROOT; };
 		4267396E25948D22008741E0 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		4267397125949588008741E0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		429C7427259CC43C00978013 /* ScrumIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumIntentHandler.swift; sourceTree = "<group>"; };
 		42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
+		42A9EA3C259CB76600FC8BA9 /* ScrumIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScrumIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A9EA3E259CB76600FC8BA9 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		42A9EA41259CB76600FC8BA9 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		42A9EA43259CB76600FC8BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A9EA4D259CB84200FC8BA9 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		42A9EA5C259CB9DA00FC8BA9 /* Scrumdinger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Scrumdinger.entitlements; sourceTree = "<group>"; };
+		42A9EA5F259CC3AB00FC8BA9 /* ScrumIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScrumIntents.entitlements; sourceTree = "<group>"; };
 		42C7B3C425975CA600EEE64E /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
 		42C7B3C825976D0000EEE64E /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		42C7B3CC259775FD00EEE64E /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognizer.swift; path = Scrumdinger/Models/SpeechRecognizer.swift; sourceTree = SOURCE_ROOT; };
@@ -66,6 +104,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42A9EA39259CB76600FC8BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A9EA3F259CB76600FC8BA9 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				42290F7525934BBE00DF5E94 /* Scrumdinger */,
+				42A9EA40259CB76600FC8BA9 /* ScrumIntents */,
+				42A9EA3D259CB76600FC8BA9 /* Frameworks */,
 				42290F7425934BBE00DF5E94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				42290F7325934BBE00DF5E94 /* Scrumdinger.app */,
+				42A9EA3C259CB76600FC8BA9 /* ScrumIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +137,7 @@
 		42290F7525934BBE00DF5E94 /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				42A9EA5C259CB9DA00FC8BA9 /* Scrumdinger.entitlements */,
 				42C7B3D025977E5400EEE64E /* HistoryView.swift */,
 				42386B532595DFAC00639FBD /* Resources */,
 				421C979C25952EA100A45C2D /* EditView.swift */,
@@ -105,6 +155,7 @@
 				4267397125949588008741E0 /* DetailView.swift */,
 				42386B572595DFF500639FBD /* ScrumProgressViewStyle.swift */,
 				42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */,
+				42A9EA4D259CB84200FC8BA9 /* Intents.intentdefinition */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -139,6 +190,25 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		42A9EA3D259CB76600FC8BA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42A9EA3E259CB76600FC8BA9 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42A9EA40259CB76600FC8BA9 /* ScrumIntents */ = {
+			isa = PBXGroup;
+			children = (
+				42A9EA5F259CC3AB00FC8BA9 /* ScrumIntents.entitlements */,
+				42A9EA41259CB76600FC8BA9 /* IntentHandler.swift */,
+				42A9EA43259CB76600FC8BA9 /* Info.plist */,
+				429C7427259CC43C00978013 /* ScrumIntentHandler.swift */,
+			);
+			path = ScrumIntents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,15 +219,34 @@
 				42290F6F25934BBD00DF5E94 /* Sources */,
 				42290F7025934BBD00DF5E94 /* Frameworks */,
 				42290F7125934BBD00DF5E94 /* Resources */,
+				42A9EA4A259CB76600FC8BA9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				42A9EA45259CB76600FC8BA9 /* PBXTargetDependency */,
 			);
 			name = Scrumdinger;
 			productName = Scrumdinger;
 			productReference = 42290F7325934BBE00DF5E94 /* Scrumdinger.app */;
 			productType = "com.apple.product-type.application";
+		};
+		42A9EA3B259CB76600FC8BA9 /* ScrumIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A9EA47259CB76600FC8BA9 /* Build configuration list for PBXNativeTarget "ScrumIntents" */;
+			buildPhases = (
+				42A9EA38259CB76600FC8BA9 /* Sources */,
+				42A9EA39259CB76600FC8BA9 /* Frameworks */,
+				42A9EA3A259CB76600FC8BA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrumIntents;
+			productName = ScrumIntents;
+			productReference = 42A9EA3C259CB76600FC8BA9 /* ScrumIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -169,6 +258,9 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					42290F7225934BBD00DF5E94 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					42A9EA3B259CB76600FC8BA9 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -187,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				42290F7225934BBD00DF5E94 /* Scrumdinger */,
+				42A9EA3B259CB76600FC8BA9 /* ScrumIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +292,13 @@
 				42386B552595DFBE00639FBD /* ding.wav in Resources */,
 				42290F7E25934BC100DF5E94 /* Preview Assets.xcassets in Resources */,
 				42290F7B25934BC100DF5E94 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A9EA3A259CB76600FC8BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,11 +327,30 @@
 				42290F7725934BBE00DF5E94 /* ScrumdingerApp.swift in Sources */,
 				42386B582595DFF500639FBD /* ScrumProgressViewStyle.swift in Sources */,
 				42386B5B2595E0FB00639FBD /* AVPlayer+Ding.swift in Sources */,
+				42A9EA4E259CB84200FC8BA9 /* Intents.intentdefinition in Sources */,
 				42A9EA36259CA51000FC8BA9 /* SiriViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42A9EA38259CB76600FC8BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A9EA4F259CB84200FC8BA9 /* Intents.intentdefinition in Sources */,
+				429C7428259CC43C00978013 /* ScrumIntentHandler.swift in Sources */,
+				42A9EA42259CB76600FC8BA9 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A9EA45259CB76600FC8BA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42A9EA3B259CB76600FC8BA9 /* ScrumIntents */;
+			targetProxy = 42A9EA44259CB76600FC8BA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		42290F8025934BC100DF5E94 /* Debug */ = {
@@ -353,8 +472,10 @@
 		42290F8325934BC100DF5E94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Scrumdinger/Scrumdinger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				DEVELOPMENT_TEAM = 8XPT9US388;
@@ -375,8 +496,10 @@
 		42290F8425934BC100DF5E94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Scrumdinger/Scrumdinger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				DEVELOPMENT_TEAM = 8XPT9US388;
@@ -389,6 +512,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.Scrumdinger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42A9EA48259CB76600FC8BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ScrumIntents/ScrumIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XPT9US388;
+				INFOPLIST_FILE = ScrumIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.Scrumdinger.ScrumIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42A9EA49259CB76600FC8BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ScrumIntents/ScrumIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XPT9US388;
+				INFOPLIST_FILE = ScrumIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.Scrumdinger.ScrumIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -411,6 +574,15 @@
 			buildConfigurations = (
 				42290F8325934BC100DF5E94 /* Debug */,
 				42290F8425934BC100DF5E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A9EA47259CB76600FC8BA9 /* Build configuration list for PBXNativeTarget "ScrumIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A9EA48259CB76600FC8BA9 /* Debug */,
+				42A9EA49259CB76600FC8BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
