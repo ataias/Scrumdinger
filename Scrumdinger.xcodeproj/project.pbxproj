@@ -24,6 +24,7 @@
 		42386B6C2595F89C00639FBD /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42386B6B2595F89C00639FBD /* History.swift */; };
 		4267396F25948D22008741E0 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267396E25948D22008741E0 /* ScrumsView.swift */; };
 		4267397225949588008741E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267397125949588008741E0 /* DetailView.swift */; };
+		42A9EA36259CA51000FC8BA9 /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */; };
 		42C7B3C525975CA600EEE64E /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3C425975CA600EEE64E /* ScrumData.swift */; };
 		42C7B3C925976D0000EEE64E /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3C825976D0000EEE64E /* MeetingTimerView.swift */; };
 		42C7B3CD259775FD00EEE64E /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B3CC259775FD00EEE64E /* SpeechRecognizer.swift */; };
@@ -50,6 +51,7 @@
 		42386B6B2595F89C00639FBD /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = History.swift; path = Scrumdinger/History.swift; sourceTree = SOURCE_ROOT; };
 		4267396E25948D22008741E0 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		4267397125949588008741E0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
 		42C7B3C425975CA600EEE64E /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
 		42C7B3C825976D0000EEE64E /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		42C7B3CC259775FD00EEE64E /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognizer.swift; path = Scrumdinger/Models/SpeechRecognizer.swift; sourceTree = SOURCE_ROOT; };
@@ -102,6 +104,7 @@
 				4267396E25948D22008741E0 /* ScrumsView.swift */,
 				4267397125949588008741E0 /* DetailView.swift */,
 				42386B572595DFF500639FBD /* ScrumProgressViewStyle.swift */,
+				42A9EA35259CA51000FC8BA9 /* SiriViewController.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				42290F7725934BBE00DF5E94 /* ScrumdingerApp.swift in Sources */,
 				42386B582595DFF500639FBD /* ScrumProgressViewStyle.swift in Sources */,
 				42386B5B2595E0FB00639FBD /* AVPlayer+Ding.swift in Sources */,
+				42A9EA36259CA51000FC8BA9 /* SiriViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,28 +6,63 @@
 //
 
 import SwiftUI
+import Intents
+import CoreSpotlight
+import MobileCoreServices
+
+let aTypeCreateScrum = "br.com.ataias.Scrumdinger.create-scrum"
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresented = false
     @State private var newScrumData = DailyScrum.Data()
+    @State private var selection: String?
     let saveAction: () -> Void
+
+    var shortcut: INShortcut {
+        let activity = NSUserActivity(activityType: aTypeCreateScrum)
+        activity.persistentIdentifier =
+            NSUserActivityPersistentIdentifier(aTypeCreateScrum)
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+
+        let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
+        activity.title = "Create Scrum"
+//        attributes.contentDescription = "The description"
+//        attributes.identifier = "\(scrum.id)"
+
+        activity.suggestedInvocationPhrase = "Create Scrum"
+        activity.contentAttributeSet = attributes
+
+        return INShortcut(userActivity: activity)
+    }
+
+    fileprivate func newScrum() {
+        newScrumData = DailyScrum.Data()
+        isPresented = true
+    }
+
     var body: some View {
         List {
             ForEach(scrums) { scrum in
-                NavigationLink(destination: DetailView(scrum: binding(for: scrum))) {
-                    CardView(scrum: scrum)
-                }
+                NavigationLink(
+                    destination: DetailView(scrum: binding(for: scrum)),
+                    tag: "\(scrum.id)",
+                    selection: $selection,
+                    label: {
+                        CardView(scrum: scrum)
+                    }
+                )
                 .listRowBackground(scrum.color)
             }
+            SiriButton(shortcut: shortcut)
         }
         .navigationTitle("Daily Scrums")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    newScrumData = DailyScrum.Data() // Ataias update
-                    isPresented = true
+                    newScrum()
                 }) {
                     Image(systemName: "plus")
                 }
@@ -55,6 +90,9 @@ struct ScrumsView: View {
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
+        .onContinueUserActivity(aTypeCreateScrum, perform: { userActivity in
+            newScrum()
+        })
     }
     
     private func binding(for scrum: DailyScrum) -> Binding<DailyScrum> {
