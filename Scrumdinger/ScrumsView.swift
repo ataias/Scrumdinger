@@ -10,7 +10,13 @@ import Intents
 import CoreSpotlight
 import MobileCoreServices
 
-let aTypeCreateScrum = "br.com.ataias.Scrumdinger.create-scrum"
+//let aTypeCreateScrum = "br.com.ataias.Scrumdinger.create-scrum"
+
+// TODO remove repetition after
+public enum Constants {
+    static let storage = "demostorage"
+    static let group = "br.com.ataias.Scrumdinger"
+}
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
@@ -19,23 +25,29 @@ struct ScrumsView: View {
     @State private var newScrumData = DailyScrum.Data()
     @State private var selection: String?
     let saveAction: () -> Void
+    @AppStorage(Constants.storage, store: UserDefaults(
+                    suiteName: Constants.group)) var store: String = "ORIGINAL"
 
+    //    var shortcut: INShortcut {
+    //        let activity = NSUserActivity(activityType: aTypeCreateScrum)
+    //        activity.persistentIdentifier =
+    //            NSUserActivityPersistentIdentifier(aTypeCreateScrum)
+    ////        activity.isEligibleForSearch = true
+    ////        activity.isEligibleForPrediction = true
+    //
+    //        let intent = ScrumIntent()
+    //        intent.suggestedInvocationPhrase = "Start Scrum"
+    //
+    //        return intent
+    //    }
     var shortcut: INShortcut {
-        let activity = NSUserActivity(activityType: aTypeCreateScrum)
-        activity.persistentIdentifier =
-            NSUserActivityPersistentIdentifier(aTypeCreateScrum)
-        activity.isEligibleForSearch = true
-        activity.isEligibleForPrediction = true
 
-        let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
-        activity.title = "Create Scrum"
-//        attributes.contentDescription = "The description"
-//        attributes.identifier = "\(scrum.id)"
-
-        activity.suggestedInvocationPhrase = "Create Scrum"
-        activity.contentAttributeSet = attributes
-
-        return INShortcut(userActivity: activity)
+        let shortcut = INShortcut(intent: {
+            let intent = ScrumIntent()
+            intent.suggestedInvocationPhrase = "Start Scrum"
+            return intent
+        }())
+        return shortcut!
     }
 
     fileprivate func newScrum() {
@@ -90,9 +102,9 @@ struct ScrumsView: View {
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
-        .onContinueUserActivity(aTypeCreateScrum, perform: { userActivity in
-            newScrum()
-        })
+        .onAppear {
+            print(store)
+        }
     }
     
     private func binding(for scrum: DailyScrum) -> Binding<DailyScrum> {
